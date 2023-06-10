@@ -12,7 +12,6 @@ import {MdNotificationsNone} from "react-icons/md";
 
 
 
-
 import ava from '..//..//../Assets/pexels-julia-filirovska-8237300.jpg';
 
 
