@@ -55,7 +55,7 @@ const options = {
 };
 
 
-const ChartContainer = () => {
+const SanshrimpChartContainer = () => {
   const [chartData, setChartData] = useState([]);
   const [chartLabels, setChartLabels] = useState([]);
 
@@ -149,4 +149,4 @@ const ChartContainer = () => {
   );
 };
 
-export default ChartContainer;
+export default SanshrimpChartContainer;

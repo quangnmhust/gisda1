@@ -3,6 +3,7 @@ import '../Chart/linechart.scss'
 import ChartContainer from '../Chart/allLinecharts';
 
 import {BsFillArrowRightCircleFill} from "react-icons/bs";
+import SanshrimpChartContainer from "./sanshripChart";
 
 const LineChart = () => {
   return (
@@ -16,7 +17,9 @@ const LineChart = () => {
             </div>
 
             <div className="chartContainer">
-                <ChartContainer />
+                {/* <ChartContainer /> */}
+
+                <SanshrimpChartContainer />
             </div>
         </div>
     </div>

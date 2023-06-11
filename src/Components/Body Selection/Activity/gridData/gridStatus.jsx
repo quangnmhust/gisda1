@@ -9,7 +9,8 @@ function GridStatus() {
     const DataGrid = async () => {
       try {
         const res = await axios.get(
-          'https://jsonplaceholder.typicode.com/todos?_limit=10'
+          'http://sanslab1.ddns.net:5001/api/device/data/sensors'
+          // 'https://jsonplaceholder.typicode.com/todos?_limit=10'
         )
         console.log(res.data)
         setData(res.data)
@@ -22,10 +23,11 @@ function GridStatus() {
   }, []);
 
   const columns = [
-    { field: "id", headerName: "ID", width: 10},
-    { field: "userId", headerName: "User", width: 20},
-    { field: "title", headerName: "Title", width: 250},
-    { field: "completed", headerName: "Status", width: 100},
+    { field: "time_to_sever", headerName: "Time", width: 100},
+    { field: "Temp", headerName: "Temp", width: 50},
+    { field: "pH", headerName: "pH", width: 50},
+    { field: "DO", headerName: "DO", width: 50},
+    
   ];
 
   const rows =  data.map((row) => ({

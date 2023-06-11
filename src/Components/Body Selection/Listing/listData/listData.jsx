@@ -8,7 +8,7 @@ function Listdata() {
     const DataGrid = async () => {
       try {
         const res = await axios.get(
-          'http://sanslab1.ddns.net:5001/api/device/data/sensors'
+          'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=1min&apikey=NBRC8I6122DWDIVO'
         )
         console.log(res.data)
         setData(res.data)
