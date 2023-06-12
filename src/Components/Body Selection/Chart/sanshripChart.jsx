@@ -22,15 +22,9 @@ ChartJS.register(
   Legend
 );
 
-// const labels = ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'];
-
 const options = {
   responsive: true,
   plugins: {
-    title: {
-      display: true,
-      text: 'SanShrimp Line Chart'
-    },
   },
   interaction: {
     intersect: false,
@@ -48,8 +42,6 @@ const options = {
         display: true,
         text: 'Value'
       },
-      // suggestedMin: -10,
-      // suggestedMax: 200
     }
   }
 };
@@ -58,34 +50,26 @@ const options = {
 const SanshrimpChartContainer = () => {
   const [chartData, setChartData] = useState([]);
   const [chartLabels, setChartLabels] = useState([]);
+  
 
   const getData = async () => {
     try {
-      const res = await axios.get(
-        'https://api.openweathermap.org/data/2.5/forecast?q=Hanoi&appid=20ec6b44f4246937e3befcf4bfe33e08&cnt=16&units=metric&lang=vi'
-      );
-      if (res.data && res.data.list.length > 0) {
+      const res = await axios.get('http://sanslab1.ddns.net:5001/api/device/data/sensors');
+        if (res.data && res.data.data.length > 0) {
         let lstLabel = [];
         let lstData = [];
-        // let lstLabel2 = [];
         let lstData2 = [];
-        // let lstLabel3 = [];
         let lstData3 = [];
-        // let lstLabel4 = [];
-       let  lstData4 = [];
+        let  lstData4 = [];
         console.log(res.data);
-        for (let item of res.data.list) {
-          lstLabel = [...lstLabel, item.dt_txt];
-          lstData = [...lstData, item.main.temp];
+        for (let item of res.data.data) {
+        
+          lstLabel = [...lstLabel, item.time_to_sever];
+          lstData = [...lstData, item.pH];
+          lstData2 = [...lstData2, item.EC];
+          lstData3 = [...lstData3, item.DO];
+          lstData4 = [...lstData4, item.Temp];
 
-          // lstLabel2 = [...lstLabel2, item.dt_txt];
-          lstData2 = [...lstData2, item.wind.gust];
-
-          // lstLabel3 = [...lstLabel3, item.dt_txt];
-          lstData3 = [...lstData3, item.main.humidity];
-          
-          // lstLabel4 = [...lstLabel4, item.dt_txt];
-          lstData4 = [...lstData4, item.main.feels_like];
         }
         setChartData([
           {
@@ -118,10 +102,6 @@ const SanshrimpChartContainer = () => {
           },
         ]);
         setChartLabels(lstLabel);
-        // setChartLabels(lstLabel2);
-        // setChartLabels(lstLabel3);
-        // setChartLabels(lstLabel4);
-
       }
     } catch (error) {
       console.log(error);
@@ -148,5 +128,4 @@ const SanshrimpChartContainer = () => {
     </div>
   );
 };
-
 export default SanshrimpChartContainer;
