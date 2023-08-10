@@ -1,0 +1,98 @@
+#login-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;  
+    background-image: url('../../Assets/background.jpg'); /* Thay đổi path đến hình ảnh của bạn */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 840px;
+    height: 480px;
+    border-radius: 12px;
+    background-color: #fff;
+    display: flex;
+}
+
+.login-form-content, .register-form-content {
+    width: 70%;
+    height: 100%;
+    border-radius: 12px 0 0  12px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form-content {
+    border-radius: 0 12px 12px 0;
+}
+
+.register-panel, .login-panel {
+    flex: 1;
+    background: #1976d2; 
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-panel {
+    border-radius: 12px 0 0  12px;
+}
+
+.login-form-content h1, .register-form-content h1 {
+    margin-bottom: 32px;
+}
+
+.login-form-content input, .register-form-content input {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 36px;
+    background-color: #e9ecef;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    padding-inline: 12px;
+}
+
+.login-form-content input:hover, .login-form-content input:focus, .register-form-content input:hover, .register-form-content input:focus {
+    background-color: #edf6f9;
+}
+
+.login-form-content button, .register-form-content button {
+    height: 36px;
+    padding-inline: 48px;
+    border: none;
+    outline: none;
+    border-radius: 100rem;
+    background-color: #1976d2;
+    color: #fff;
+    font-weight: 600;                                                                                                                               
+}
+
+.register-panel h1, .login-panel h1 {
+    color: #fff;
+    margin-bottom: 32px;
+}
+
+.register-panel button, .login-panel button {
+    height: 36px;
+    padding-inline: 48px;
+    border: none;
+    outline: none;
+    border-radius: 100rem;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;    
+}
