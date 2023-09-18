@@ -309,7 +309,7 @@ const FrameDetail = () => {
             </div>
           </>
         ) : null}
-        {chartData ? (
+        {/* {chartData ? (
           <>
             <div children="divDetails1">
               <h2>Forecast</h2>
@@ -364,7 +364,7 @@ const FrameDetail = () => {
               </div>
             </div>
           </>
-        ) : null}
+        ) : null} */}
         {chartData ? (
           <>
             <tr className="scale_value">
